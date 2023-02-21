@@ -1,0 +1,68 @@
+# 1. Write a Python Program to Find the Factorial of a Number?
+
+num = int(input("Enter any positive integer: "))
+x = 1
+total = 1
+while x <= num:
+    total = total * x
+    x= x + 1
+print("Factorial of {} = {}".format(num, total))
+
+# 2. Write a Python Program to Display the multiplication Table?
+
+num = int(input("Enter any positive integer to print its table: "))
+x = 1
+result = 1
+while x <= 10:
+    result = num * x
+    print(num, "*", x, "=", result)
+    x = x + 1
+    
+# 3. Write a Python Program to Print the Fibonacci sequence?
+
+n = int(input("Enter the length for Fibonacci sequence: "))
+L1 = [0, 1]
+i = 0
+while len(L1) < n:
+    x = L1[i] + L1[i+1]
+    L1.append(x)
+    i = i+1    
+print(L1)
+
+# 4. Write a Python Program to Check Armstrong Number?
+
+x = input("Enter a number to check if its an Armstrong number: ")   #taking str input
+L1 = list((x))  #ingesting the string in a list as individual characters
+L2 = list(map(int, L1)) #converting list elements to int
+add = 0
+for i in L2:
+    add = add + i**len(L2)
+print("Sum of digits raised to power of number of digits =", add)
+if add == int(x):
+    print("{} is an Armstrong number".format(x))
+else:
+    print("{} is not an Armstrong number".format(x))
+    
+# 5. Write a Python Program to Find Armstrong Number in an Interval?    
+
+
+x = int(input("Enter lower range value: "))
+y = int(input("Enter higher range value: "))
+L2 = []
+for i in range(x, y):
+    b = str(i)
+    L1 = list(map(int, list((b)))) # list((b)) is a list of individual char of str(i)
+    add = 0
+    for j in L1:
+        add = add + j**len(L1)
+    if add == i:
+        L2.append(i)
+print("list of armstrong numbers between given range: ", L2)
+
+# 6. Write a Python Program to Find the Sum of Natural Numbers?
+
+n = int(input("Enter a positive integer: "))
+total = 0
+for x in range(0, n+1):
+    total = total + x
+print("Sum of {} natural number is {}".format(n, total))
